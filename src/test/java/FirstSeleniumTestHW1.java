@@ -10,8 +10,11 @@ public class FirstSeleniumTestHW1 {
     @BeforeMethod
     public void setUp(){
         driver = new ChromeDriver();
-        driver.get("https://uakino.best/filmy");
+        //driver.get("https://uakino.best/filmy");
        // driver.navigate().forward();
+       // driver.navigate().back();
+        driver.get("https://uakino.best/colections/simejnij-ekshn");
+        driver.navigate().to("https://uakino.best/filmy/");
         driver.navigate().back();
     }
     @Test
@@ -19,7 +22,7 @@ public class FirstSeleniumTestHW1 {
 
         System.out.println("UA kino opened");
     }
-@AfterMethod //(enabled = false)
+@AfterMethod (enabled = false)
     public void tearDown(){
         driver.quit();
 
