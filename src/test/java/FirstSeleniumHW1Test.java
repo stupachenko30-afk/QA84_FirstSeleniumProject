@@ -28,3 +28,11 @@ public class FirstSeleniumHW1Test {
 
 }
 }
+/*
+ChromeDriverService service = new ChromeDriverService.Builder()
+        .usingDriverExecutable(new File("E:\\Tools\\chromedriver.exe"))
+        .build();
+
+
+driver = new ChromeDriver(service);
+ */
