@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class FindElementTest {
+public class FirstElementTest {
     WebDriver driver;
 
     @BeforeMethod
