@@ -35,11 +35,13 @@ public class FindElementTest {
     public void tearDown(){
         driver.quit();
     }
+
     @Test
     public void findElementByTagName(){
       //one element
         WebElement h1 = driver.findElement(By.tagName("h1")); //alt+enter
         System.out.println(h1.getText());
+
         WebElement h2 = driver.findElement(By.tagName("h2"));
         System.out.println(h2.getText());
 
