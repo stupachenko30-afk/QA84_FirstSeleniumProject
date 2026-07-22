@@ -12,8 +12,8 @@ public class FirstSeleniumTest {
         driver = new ChromeDriver();
         driver.get("https://www.google.com"); //Основной метод without history
        // driver.navigate().to("https://www.google.com");
-        driver.navigate().back(); //one page back
-        driver.navigate().forward();
+       // driver.navigate().back(); //one page back
+       // driver.navigate().forward();
       //  driver.navigate().refresh();// refresh=reload
     }
                        //test "Register new user"
