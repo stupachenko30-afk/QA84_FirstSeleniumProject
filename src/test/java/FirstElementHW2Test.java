@@ -22,9 +22,11 @@ public class FirstElementHW2Test {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));}
 
 @AfterMethod
-        public void tearDown(){
-        driver.quit();}
-
+        public void tearDown() {
+    if (driver != null) {
+        driver.quit();
+    }
+}
         @Test
     public void findElementByTagName(){
              WebElement h3 = driver.findElement(By.tagName("h3"));

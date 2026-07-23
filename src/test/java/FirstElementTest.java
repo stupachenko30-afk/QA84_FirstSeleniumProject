@@ -59,4 +59,16 @@ public class FirstElementTest {
         WebElement city = driver.findElement(By.id("city"));
         System.out.println(city.getAttribute("id"));
     }
+
+    @Test
+    public void findElementByClassName(){
+
+        WebElement telephone = driver.findElement(By.className("telephone"));
+        System.out.println(telephone.getText());
+
+        WebElement description = driver.findElement(By.className("description"));
+        System.out.println(description.getText());
+
+
+    }
 }
