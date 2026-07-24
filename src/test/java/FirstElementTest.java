@@ -69,6 +69,9 @@ public class FirstElementTest {
         WebElement description = driver.findElement(By.className("description"));
         System.out.println(description.getText());
 
+        WebElement element = driver.findElement(By.className("address-container"));
+        System.out.println(element.getText());
+
 
     }
     @Test
