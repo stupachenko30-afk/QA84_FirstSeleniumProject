@@ -71,4 +71,61 @@ public class FirstElementTest {
 
 
     }
+    @Test
+    public void findElementByLinkElement(){
+        WebElement let_car_work = driver.findElement(By.linkText("Let car work"));
+        System.out.println(let_car_work.getText());
+    }
+    @Test
+    public void findElementByPartialLinkText(){
+        WebElement work = driver.findElement(By.partialLinkText("work"));
+        System.out.println(work.getText());
+    }
+    @Test
+    public void findElementByCssSelector(){
+       // driver.findElement(By.tagName("h1"));
+        //tagName -> "h1"
+        //css ->"h1"
+        WebElement h1 = driver.findElement(By.cssSelector("h1"));
+        System.out.println(h1.getText());
+
+        //driver.findElement(By.id("city"));
+        //id->"city"
+          //css-> "#city"
+        WebElement element = driver.findElement(By.cssSelector("#city"));
+        System.out.println(element.getText());
+
+        //driver.findElement(By.className("telephone"));
+        WebElement element1 = driver.findElement(By.cssSelector(".telephone"));
+        System.out.println(element1.getText());
+
+        //[attr='par']
+        WebElement element2 = driver.findElement(By.cssSelector("[href='/search']"));
+        System.out.println(element2.getText());
+
+        WebElement element3 = driver.findElement(By.cssSelector("[for='city']"));
+        System.out.println(element3.getText());
+
+        //contains -> *
+        driver.findElement(By.cssSelector("[href*='car']"));
+        //start -> ^
+
+//start -> ^
+        driver.findElement(By.cssSelector("[href^='/terms']"));
+// end -> $
+        driver.findElement(By.cssSelector("[href$='work']"));
+
+driver.findElement(By.cssSelector("a.navigation-link[href='/search']"));
+
+          // one step down
+         driver.findElement(By.cssSelector(".logo>img"));
+
+         //space -> one or more steps down
+        driver.findElement(By.cssSelector(".feedback-card .feedback-date"));
+
+        //<tag> or <id> or <class>:nth-child(n)
+        WebElement feedback = driver.findElement(By.cssSelector(".feedback-card:nth-child(5)"));
+        System.out.println(feedback.getText());
+    }
+
 }
