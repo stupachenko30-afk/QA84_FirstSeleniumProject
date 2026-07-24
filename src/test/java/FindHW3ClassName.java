@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class FindHW3ClassName {
     WebDriver driver;
@@ -23,7 +24,7 @@ public class FindHW3ClassName {
     public void tearDown(){driver.quit();}
 
     @Test
-    public void FindElementsByClassName(){
+    public void FindElementsByClassName() {
 
         WebElement element = driver.findElement(By.className("tags"));
         System.out.println(element.getText());
@@ -43,7 +44,7 @@ public class FindHW3ClassName {
         WebElement element5 = driver.findElement(By.className("master-wrapper-page"));
         System.out.println(element5.getText());
 
-      WebElement element6= driver.findElement(By.className("master-wrapper-content"));
+        WebElement element6 = driver.findElement(By.className("master-wrapper-content"));
         System.out.println(element6.getText());
 
         WebElement element7 = driver.findElement(By.className("header"));
@@ -55,8 +56,28 @@ public class FindHW3ClassName {
         WebElement element9 = driver.findElement(By.className("header-menu"));
         System.out.println(element9.getText());
 
-
-
-
+        System.out.println("********************");
     }
+
+        @Test
+                public void FindElementByCssSelector(){
+        //CssSelector
+        WebElement element = driver.findElement(By.cssSelector(".header"));
+        System.out.println(element.getText());
+        driver.findElement(By.cssSelector(".tags"));
+        driver.findElement(By.cssSelector(".footer"));
+
+        WebElement element1 = driver.findElement(By.cssSelector("#dialog-notifications-success"));
+        System.out.println(element1.getText());
+        driver.findElement(By.cssSelector("#dialog-notifications-error"));
+        driver.findElement(By.cssSelector("#topcartlink"));
+
+        WebElement element2 = driver.findElement(By.cssSelector("[name='description'"));
+        System.out.println(element2.getText());
+        driver.findElement(By.cssSelector("[name='keywords'"));
+        driver.findElement(By.cssSelector("[name='viewport'"));
+
+
+        }
+
 }
