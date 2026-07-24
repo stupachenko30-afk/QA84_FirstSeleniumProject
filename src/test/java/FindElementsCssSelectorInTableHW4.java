@@ -43,12 +43,16 @@ public class FindElementsCssSelectorInTableHW4 {
             System.out.println(tr.get(i).getText());
         }
         System.out.println("***************************");
+
         WebElement element = driver.findElement(By.cssSelector(".padding tr:nth-child(3)"));
         System.out.println(element.getText());
+
         System.out.println("***************************");
 
-        WebElement element1 = driver.findElement(By.cssSelector(".padding tr:nth-child(2) td:nth-child(3)"));
+        WebElement element1 = driver.findElement(By.cssSelector(".padding tr:nth-child(2) td:nth-child(2)"));
         System.out.println(element1.getText());
+
+        System.out.println("****************************");
     }
 
 
