@@ -183,7 +183,19 @@ driver.findElement(By.cssSelector("a.navigation-link[href='/search']"));
 
 
     }
+@Test
+    public void findElementByXpathFamily(){
 
+        //parent
+    driver.findElement(By.xpath("//h1/parent::*"));
+    driver.findElement(By.xpath("//h1/parent::div"));
+    driver.findElement(By.xpath("//h1/.."));
+
+    //ancestor
+    driver.findElement(By.xpath("//h1/ancestor::*"));
+    driver.findElement(By.xpath("//h1/ancestor::div"));
+    driver.findElement(By.xpath("//h1/ancestor::div[2]"));
+}
 
 
 }
