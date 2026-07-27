@@ -130,5 +130,60 @@ driver.findElement(By.cssSelector("a.navigation-link[href='/search']"));
         WebElement feedback = driver.findElement(By.cssSelector(".feedback-card:nth-child(5)"));
         System.out.println(feedback.getText());
     }
+    @Test
+    public void findElementByXpath(){
+        //     //*same_tag[@attribute='value']
+        //     //tag[2] поиск по тегу
+        //     // tag[@attribute='value' and @attribute2='value'] or, not
+        //     // text(); contains();  метод
+        //driver.findElement(By.cssSelector("h1"));
+         driver.findElement(By.xpath("//h1"));
+
+        //driver.findElement(By.cssSelector("#city"));
+        driver.findElement(By.xpath("//input[@id='city']"));
+
+        //driver.findElement(By.cssSelector(".telephone"));
+        driver.findElement(By.xpath("//a[@class='telephone']"));
+
+        //driver.findElement(By.cssSelector("[href='/search']"));
+       // driver.findElement(By.cssSelector("[for='city']"));
+        driver.findElement(By.xpath("//a[@href='/search']"));
+        driver.findElement(By.xpath("//*[@for='city']"));
+
+        //contains -> *
+       // driver.findElement(By.cssSelector("[href*='car']"));
+        driver.findElement(By.xpath("//*[contains(@href,'car')]"));
+
+//start -> ^
+       //driver.findElement(By.cssSelector("[href^='/terms']"));
+        driver.findElement(By.xpath("//*[starts-with(@href,'/terms')]"));
+
+        //text
+        //WebElement text = driver.findElement(By.xpath("//*[contains(text(),'This car exceeded my expectations')]"));
+
+        WebElement text = driver.findElement(By.xpath("//p[contains(. ,'This car exceeded my expectations')]"));
+        System.out.println(text.getText());
+
+        //composite css
+//tag + class + pare[attr='par']
+
+        //driver.findElement(By.cssSelector("a.navigation-link[href='/search']"));
+        driver.findElement(By.xpath("//a[contains(@class,'navigation-link') and @href='/search']"));
+
+// driver.findElement(By.cssSelector("div.social-networks"));
+        driver.findElement(By.xpath("//div[contains(@class,'social-networks')]"));
+
+
+        // cssSelector -> div>a     xPath->div/a one step
+       // driver.findElement(By.cssSelector(".logo>img"));
+        driver.findElement(By.xpath("//*[@class='logo']/img"));
+
+        // cssSelector ->div a      xPath-> div//a one or more steps
+        driver.findElement(By.xpath("//div[@class='feedback-card']//*[@class='feedback-date']"));
+
+
+    }
+
+
 
 }

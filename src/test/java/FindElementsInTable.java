@@ -55,6 +55,30 @@ public class FindElementsInTable {
 
 
     }
+
+    @Test
+    public void findXpathInTable(){
+        //get numbers of row
+        List<WebElement> rows = driver.findElements(By.xpath("//tr"));
+        System.out.println(rows.size());
+
+        WebElement germany = driver.findElement(By.xpath("//*[@id='customers']//tr[2]//td[2]"));
+        System.out.println(germany.getAttribute("textContent"));
+        System.out.println("**************************");
+
+        WebElement element1 = driver.findElement(By.xpath("//*[@id='customers']//tr[6] //td[2]"));
+        System.out.println(element1.getAttribute("textContent"));
+
+        WebElement element2 = driver.findElement(By.xpath("//*[@id='customers']//tr[6] //td[last()]"));
+        System.out.println(element2.getAttribute("textContent"));
+
+
+
+
+    }
+
+
+
     @AfterMethod
     public void tearDown(){
         if (driver !=null){
